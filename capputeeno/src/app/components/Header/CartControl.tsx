@@ -9,12 +9,16 @@ const CartContainer = styled.div`
 const CartCount = styled.span`
     position: absolute;
     right: -10px;
-    top: -50%;
+    top: 60%;
     background-color: var(--delete-color);
     border-radius: 50%;
     color: white;
     width: 17px;
     height: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
 `
 
 const CartControl = () => {
