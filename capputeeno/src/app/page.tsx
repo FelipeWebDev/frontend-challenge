@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import FilterBar from "@/components/FilterMenu/FilterBar";
 import styled from "styled-components";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
