@@ -4,8 +4,6 @@ import { useState } from "react";
 import { useFilter } from "@/hooks/useFilter";
 import { PriorityType } from "@/types/PriorityTypes";
 
-interface FilterByPriorityProps {}
-
 const FilterContainer = styled.div`
   display: flex;
   align-items: center;
@@ -40,6 +38,7 @@ const PriorityFilter = styled.ul`
   list-style: none;
   font-family: inherit;
   top: 100%;
+  z-index: 1;
 
   li {
     color: var(--text-dark);
