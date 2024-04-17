@@ -14,7 +14,7 @@ const FilterContainer = styled.div`
     border: none;
     cursor: pointer;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     color: var(--text-dark);
     line-height: 22px;
@@ -25,12 +25,17 @@ const FilterContainer = styled.div`
     svg {
         margin-left: 16px;
     }
+
+    @media (min-width: ${props => props.theme.desktopBreakpoint}) {
+      font-size: 14px;
+    }
   }
 `;
 
 const PriorityFilter = styled.ul`
   position: absolute;
   width: 250px;
+  font-size: 12px;
   background: #fff;
   box-shadow: 0 4px 12px  rgba(0, 0, 0, 0.1);
   border-radius: 4px;
@@ -38,16 +43,21 @@ const PriorityFilter = styled.ul`
   list-style: none;
   font-family: inherit;
   top: 100%;
+  right: 8px;
   z-index: 1;
 
   li {
     color: var(--text-dark);
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
   }
 
   li + li {
     margin-top: 4px;
+  }
+
+  @media (min-width: ${props => props.theme.desktopBreakpoint}) {
+    font-size: 14px;
   }
 `;
 
