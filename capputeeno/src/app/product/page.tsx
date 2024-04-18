@@ -119,13 +119,41 @@ const ProductInfo = styled.div`
 
 const ProductPage = ({ searchParams }: { searchParams: { id: string } }) => {
   const { data } = useProductRequest(searchParams.id);
+
   const category = () => {
     if (data?.category === "mugs") return "Canecas";
     if (data?.category === "t-shirts") return "Camisetas";
     return "";
   };
 
-  console.log(data);
+  const handleAddToCart = () => {
+    let cartItems = localStorage.getItem("cart-items");
+
+    if (cartItems) {
+      const arrayItems = JSON.parse(cartItems);
+      let existingProductsIndex = arrayItems.findIndex(
+        (item: { id: string }) => item.id === searchParams.id
+      );
+
+      if (existingProductsIndex != -1) {
+        arrayItems[existingProductsIndex].quantity += 1;
+      } else {
+        arrayItems.push({ ...data, id: searchParams.id, quantity: 1 });
+      }
+
+      localStorage.setItem("cart-items", JSON.stringify(arrayItems));
+    } else {
+      const newCart = JSON.stringify([
+        {
+          ...data,
+          id: searchParams.id,
+          quantity: 1,
+        },
+      ]);
+
+      localStorage.setItem("cart-items", newCart);
+    }
+  };
 
   return (
     <DefaultPageLayout>
@@ -145,7 +173,7 @@ const ProductPage = ({ searchParams }: { searchParams: { id: string } }) => {
               <h3>descrição</h3>
               <p>{data?.description}</p>
             </div>
-            <button>
+            <button onClick={handleAddToCart}>
               <CartIcon />
               adicionar ao carrinho
             </button>
