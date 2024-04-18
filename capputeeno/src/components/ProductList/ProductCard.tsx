@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import FormatPrice from "@/utils/FormatPrice";
+import Link from "next/link";
 
 interface ProductCardProps {
   image: string;
   title: string;
   price: number;
+  id: string;
 }
 
 const Card = styled.div`
@@ -60,12 +62,14 @@ const ProductCard = (props: ProductCardProps) => {
 
   return (
     <Card>
-      <img src={props.image}></img>
-      <div>
-        <h3>{props.title}</h3>
-        <div></div>
-        <p>{price}</p>
-      </div>
+      <Link href={`/product?id=${props.id}`}>
+        <img src={props.image}></img>
+        <div>
+          <h3>{props.title}</h3>
+          <div></div>
+          <p>{price}</p>
+        </div>
+      </Link>
     </Card>
   );
 };

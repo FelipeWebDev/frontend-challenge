@@ -23,6 +23,7 @@ const ProductList = () => {
           title={product.name}
           price={product.price_in_cents}
           image={product.image_url}
+          id={product.id}
         />
       ))}
     </ProductGrid>

@@ -3,12 +3,15 @@
   --logo-color: #5D5D6D;
   --bg-primary: #F0F0F5;
   --bg-secondary: #F3F5F6;
+  --secondary-text: #617480;
   --text-dark: #737380;
   --text-dark-2: #41414D;
+  --shapes: #DCE2E6;
+  --shapes-light: #F5F5FA;
   --shapes-dark: #09090A;
   --delete-color: #DE3838;
   --orange-low: #FFA585;
-  --shapes: #DCE2E6;
+  --brand-blue: #115D8C;
 }
 
 * {
@@ -25,4 +28,8 @@ body {
 
 a {
   text-decoration: none;
+}
+
+button {
+  font-family: inherit;
 }
