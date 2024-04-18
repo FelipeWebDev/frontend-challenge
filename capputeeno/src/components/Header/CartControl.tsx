@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
-import CartIcon from "./CartIcon";
+import CartIcon from "../Icons/CartIcon";
 
 const CartContainer = styled.div`
     position: relative;
