@@ -24,7 +24,8 @@ export function useProductRequest (id: string) {
     const {data} = useQuery ({
         queryFn: () => fetcher(id),
         queryKey: ["product", id],
-        enabled: !!id
+        enabled: !!id,
+        staleTime: 1000 * 60
     })
 
     return {
