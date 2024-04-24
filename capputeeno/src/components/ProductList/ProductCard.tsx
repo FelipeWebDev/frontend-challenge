@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import FormatPrice from "@/utils/FormatPrice";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 interface ProductCardProps {
