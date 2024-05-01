@@ -111,6 +111,13 @@ const ProductInfo = styled.div`
     padding: 10px;
     gap: 12px;
     width: 100%;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+
+    &:hover {
+      opacity: 0.5;
+    }
 
     svg path {
       stroke: var(--shapes-light);
