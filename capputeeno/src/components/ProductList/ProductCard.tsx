@@ -18,6 +18,14 @@ const Card = styled.div`
   backdrop-filter: blur(10px);
   margin-bottom: 24px;
   cursor: pointer;
+  opacity: 1;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+
+  &:hover {
+    opacity: 1;
+  }
 
   img {
     width: 256px;

@@ -10,6 +10,14 @@ const ProductGrid = styled.div`
   grid-gap: 32px;
   max-width: 100%;
   margin-top: 82px;
+
+  &:hover > div {
+    opacity: 0.5;
+  }
+
+  &:hover > div:hover {
+    opacity: 1;
+  }
 `;
 
 const ProductList = () => {
