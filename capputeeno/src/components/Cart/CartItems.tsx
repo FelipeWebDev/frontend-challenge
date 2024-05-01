@@ -15,7 +15,7 @@ const CartItem = styled.li`
   gap: 7px;
   border-radius: 8px;
   background-color: white;
-  width: 736px;
+  width: 100%;
   position: relative;
 
   > button {
@@ -51,7 +51,9 @@ const CartItem = styled.li`
       margin: 12px 0;
       font-size: 12px;
       font-weight: 400;
-      /*line-height: 18px;*/
+      max-height: 50%;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     > div {

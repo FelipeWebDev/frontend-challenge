@@ -35,6 +35,7 @@ const Logo = styled.a`
     color: var(--logo-color);
     line-height: 158%;
     font-size: 20px;
+    text-decoration: none;
 
     @media (min-width: ${props => props.theme.tabletBreakpoint}) {
       font-size: 24px;

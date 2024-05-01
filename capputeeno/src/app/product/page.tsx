@@ -6,6 +6,7 @@ import BackButton from "@/components/Commons/BackButton";
 import { useProductRequest } from "@/hooks/useProductRequest";
 import FormatPrice from "@/utils/FormatPrice";
 import CartIcon from "@/components/Icons/CartIcon";
+import { useState } from "react";
 
 const ProductContainer = styled.div`
   display: flex;
@@ -126,6 +127,15 @@ const ProductPage = ({ searchParams }: { searchParams: { id: string } }) => {
     return "";
   };
 
+  const [buttonText, setButtonText] = useState("adicionar ao carrinho");
+  const handleButtonText = async () => {
+    setButtonText("adicionando...");
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    setButtonText("adicionado!");
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    setButtonText("adicionar ao carrinho");
+  };
+
   const handleAddToCart = () => {
     let cartItems = localStorage.getItem("cart-items");
 
@@ -153,7 +163,10 @@ const ProductPage = ({ searchParams }: { searchParams: { id: string } }) => {
 
       localStorage.setItem("cart-items", newCart);
     }
+
+    handleButtonText();
   };
+  
 
   return (
     <DefaultPageLayout>
@@ -175,7 +188,7 @@ const ProductPage = ({ searchParams }: { searchParams: { id: string } }) => {
             </div>
             <button onClick={handleAddToCart}>
               <CartIcon />
-              adicionar ao carrinho
+              {buttonText}
             </button>
           </ProductInfo>
         </ProductDisplay>
