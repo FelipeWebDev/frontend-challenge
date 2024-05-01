@@ -14,11 +14,11 @@ export function GetFieldsByPriority (priority: PriorityType) {
     return {field: "sales", order: "DSC"}
 }
 
-export function mountQuery (type: FilterType, priority: PriorityType) {
+export function mountQuery (type: FilterType, priority: PriorityType, pageNumber: number) {
     if (type === FilterType.ALL && priority === PriorityType.POPULARITY)
       return `
       query {
-          allProducts (sortField: "sales", sortOrder: "DSC") {
+          allProducts (page: ${pageNumber}, perPage: 12, sortField: "sales", sortOrder: "DSC") {
             id
             name
             price_in_cents
@@ -32,7 +32,7 @@ export function mountQuery (type: FilterType, priority: PriorityType) {
   
     return `
     query {
-      allProducts (${categoryFilter} sortField: "${sortSettings.field}", sortOrder: "${sortSettings.order}") {
+      allProducts (page: ${pageNumber}, perPage: 12, ${categoryFilter} sortField: "${sortSettings.field}", sortOrder: "${sortSettings.order}") {
         id
         name
         price_in_cents

@@ -1,25 +1,29 @@
-import styled from 'styled-components';
-import FilterByType from './FilterByType';
-import FilterByPriority from './FilterByPriority';
+import styled from "styled-components";
+import FilterByType from "./FilterByType";
+import FilterByPriority from "./FilterByPriority";
+import Pagination from "./Pagination";
 
-interface FilterBarProps {
-
-}
-
-const FilterContainer = styled.div`
-    display: flex;
+const FilterWrapper = styled.div`
     width: 100%;
-    align-items: start;
-    justify-content: space-between;
 `
 
-const FilterBar = (props: FilterBarProps) => {
-    return (
-        <FilterContainer>
-            <FilterByType />
-            <FilterByPriority/>
-        </FilterContainer>
-    )
-}
+const FilterContainer = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: start;
+  justify-content: space-between;
+`;
+
+const FilterBar = () => {
+  return (
+    <FilterWrapper>
+      <FilterContainer>
+        <FilterByType />
+        <FilterByPriority />
+      </FilterContainer>
+      <Pagination />
+    </FilterWrapper>
+  );
+};
 
 export default FilterBar;

@@ -32,6 +32,10 @@ const Card = styled.div`
     line-height: 24px;
     text-align: left;
     color: var(--text-dark-2);
+    width: 100%;
+    border-bottom: 1px solid var(--shapes);
+    margin-bottom: 8px;
+    padding-bottom: 8px;
   }
 
   p {
@@ -48,13 +52,6 @@ const Card = styled.div`
     justify-content: center;
     flex-direction: column;
     padding: 8px 12px;
-
-    > div {
-      width: 228px;
-      height: 1px;
-      margin: 8px 0;
-      background: var(--shapes);
-    }
   }
 `;
 
@@ -72,7 +69,6 @@ const ProductCard = (props: ProductCardProps) => {
       <img src={props.image}></img>
       <div>
         <h3>{props.title}</h3>
-        <div></div>
         <p>{price}</p>
       </div>
     </Card>
