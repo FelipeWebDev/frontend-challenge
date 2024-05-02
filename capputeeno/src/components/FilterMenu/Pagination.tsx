@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useFilter } from "@/hooks/useFilter"
 import styled from "styled-components";
 import PaginationIcon from "../Icons/PaginationIcon";
-import { productAmount } from "@/utils/ProductAmount";
+import { productAmount } from "@/hooks/useProductAmount";
 
 const PaginationWrapper = styled.div`
   display: flex;
