@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useFilter } from "@/hooks/useFilter"
 import styled from "styled-components";
 import PaginationIcon from "../Icons/PaginationIcon";
-import { productAmount } from "@/hooks/useProductAmount";
+import { useProductAmount } from "@/hooks/useProductAmount";
 
 const PaginationWrapper = styled.div`
   display: flex;
@@ -62,7 +62,7 @@ const Pagination = () => {
   const [prevActive, setPrevActive] = useState(false);
   const [nextActive, setNextActive] = useState(true);
 
-  const productQuantity = Number(productAmount());
+  const productQuantity = Number(useProductAmount());
   const itemsPerPage = 12;
   const allPages = Math.ceil(productQuantity / itemsPerPage);
 

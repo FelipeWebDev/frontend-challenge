@@ -19,7 +19,7 @@ const mountQuery = () => {
   `;
 };
 
-export function productAmount() {
+export function useProductAmount() {
   const { data } = useQuery({
     queryFn: () => fetcher(mountQuery()),
     queryKey: ["products"],
